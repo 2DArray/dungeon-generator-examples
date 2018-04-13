@@ -22,7 +22,7 @@ A **Fitness Function** allows you to achieve both, and it lets you focus on the 
 Okay, here we go!
 
 ### 1.  Make some examples of your content by hand  
-*Sketch them on paper, draw them in MS Paint, etc*
+  * *Sketch them on paper, draw them in MS Paint, etc*
 
 ### 2.  Keep going until you can mentally describe a rough approximation of your process  
   * *Consider what you always do, and what you never do*
