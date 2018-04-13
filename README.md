@@ -22,16 +22,16 @@ A **Fitness Function** allows you to achieve both, and it lets you focus on the 
 Okay, here we go!
 
 ### 1.  Make some examples of your content by hand  
-  * *Sketch them on paper, draw them in MS Paint, etc*
+  * *Sketch them on paper, draw them in MS Paint, etc.*
 
 ### 2.  Keep going until you can mentally describe a rough approximation of your process  
-  * *Consider what you always do, and what you never do*
-  * *You don't need a perfect approximation.  Expect the generator to be weaker on average than your original examples*
+  * *Consider what you always do, and what you never do.*
+  * *You don't need a perfect approximation.  Expect the generator to be weaker on average than your original examples.*
   * *(Just try to capture the most important steps)*
   * *("I start by picking some number of room locations, then I see how big I can make the rooms without overlapping them, then I add a bunch of halls and doorways to connect the rooms.")*
 
 ### 3.  Convert your approximated-process into code
-  * *Try not to assume that your generator is "locked in" at any point - you can change anything about its behavior later on if you find a specific reason to do so.*
+  * *Try not to assume that your generator is "locked in" at any point - you can change anything about its behavior later on.*
 ### 4.  Explore lots of examples made by your new generator
 
   * *Identify which examples look good, and which examples are unusable*
@@ -39,7 +39,7 @@ Okay, here we go!
 ### 5.  Write a function that measures the good/bad qualities of a generated asset - this is your generator's Fitness Function.  
   * *The only fitness function in this repo is "how long is the shortest path from the spawn tile to the exit?" (it's a standard pathfinding routine). It returns 0 if there's no path for a given map, or it returns the length of the shortest path if it can find one.*  
   * *For situations where your generator faces difficult or nuanced constraints (like a stealth game with randomly generated layouts), don't worry - you can combine two or more fitness functions very easily!  Their output is just a number, so you can add them together, maybe multiplying them by weights to show it different levels of importance, and so on.*
-  * *A slightly more considerate fitness function might reward good qualities and penalize bad qualities:*
+  * *A slightly more considerate fitness function might reward good qualities and penalize bad qualities:*  
   `Fitness(A) = MeasureDistance(A) - MeasureDeadEnds(A)*0.2`
 
 ### 6.  When you generate content for a player, generate a bunch of examples, measure their fitness values, and pick one of the highest-scoring results.  This selection is the only asset out of the set that you actually show to the player.  Discard all the others!
