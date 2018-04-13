@@ -18,24 +18,26 @@ Decisions about how a procedural generator should work often end up involving a 
 
 A **Fitness Function** allows you to achieve both, and it lets you focus on the two problems independently.
 
-#####1.  Make some examples of your content by hand  
+####1.  Make some examples of your content by hand  
 *Sketch them on paper, draw them in MS Paint, etc*
 
-#####2.  Keep going until you can mentally describe a rough approximation of your process  
+####2.  Keep going until you can mentally describe a rough approximation of your process  
   * *Consider what you always do, and what you never do*  
   * *You don't need a perfectly nuanced approximation*  
   * *(Just try to capture the most important steps)*  
 
-#####3.  Convert your approximated-process into code
+####3.  Convert your approximated-process into code
 
-#####4.  Explore lots of examples made by your new generator
-#####5.  Identify which examples look good, and which examples are unusable
-#####6.  Write a function that measures the good/bad qualities you've found in the generated assets - this is your generator's Fitness Function.  
+####4.  Explore lots of examples made by your new generator
+
+####5.  Identify which examples look good, and which examples are unusable
+
+####6.  Write a function that measures the good/bad qualities you've found in the generated assets - this is your generator's Fitness Function.  
   * *The only fitness function in this repo is "how long is the shortest path from the spawn tile to the exit?" (it's a standard pathfinding routine). It returns 0 if there's no path for a given map, or it returns the length of the shortest path if it can find one.*  
   * *For situations where your generator faces difficult or nuanced constraints (like a stealth game with randomly generated layouts), don't worry - you can combine two or more fitness functions very easily!  Their output is just a number, so you can add them together, maybe multiplying them by weights to show it different levels of importance, and so on.*  
   * `Fitness(A) = MeasureDistance(A) - MeasureDeadEnds(A)*0.2`
 
-#####7.  When you generate content for a player, don't just make one - generate a bunch of examples, measure their fitness values, and pick one of the top scorers.  This is the only asset out of the set that you show to the player, so you can discard all the others.
+####7.  When you generate content for a player, don't just make one - generate a bunch of examples, measure their fitness values, and pick one of the top scorers.  This is the only asset out of the set that you show to the player, so you can discard all the others.
 
 To see the true power of a Fitness Function, try plugging "Dungeon Generator (Noise)" into the MapCurator's Template slot, and setting the number of generators to 64.  If you check the results here, you'll see some abject horseshit - each map is illegible white noise.
 
