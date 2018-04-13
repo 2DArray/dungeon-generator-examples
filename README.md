@@ -4,7 +4,9 @@ Some examples of dungeon generators in Unity, including an example of a **"Fitne
 ![16x generator gif](https://i.imgur.com/cPBFyCC.gif)
 
 ## Running the demos
-There's one scene in the project, which contains a few game objects.  One of them is called "Map Curator" - this object spawns instances of our various dungeon generators.  All generators will start when you hit play, and you can quickly restart them by hitting the spacebar during Play Mode.  To switch between them, stop the game, switch the Template field in the MapCurator inspector to a different generator (they're all attached to inactive game objects in the same scene).
+There's one scene in the project, which contains a few game objects.  One of them is called "Map Curator" - this object spawns instances of our various dungeon generators.  All generators will start when you hit play, and you can quickly restart them by hitting the spacebar during Play Mode.  To switch between them, stop the game and switch the Template field in the MapCurator inspector to a different generator (they're all attached to inactive game objects in the same scene).
+
+Enable the "Fast Forward" checkbox on Map Curator if you don't want to watch the generators while they're working - then you can jam the spacebar to see a bunch of results quickly.
 
 ## A general-purpose procgen method
 The demos in this repo are only showing how to generate dungeons, but the following routine can be applied to any form of content that you want to create procedurally.
